@@ -5,8 +5,8 @@ import inquirer from 'inquirer';
 const configPath = './config.json';
 
 export function readConfig() {
-  const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-  return config;
+  const config = fs.readFileSync(configPath, 'utf8');
+  return JSON.parse(config);
 }
 
 export function saveConfig(config) {
