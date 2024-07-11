@@ -14,19 +14,6 @@ Ensure you have Node.js installed. Then, install the required packages:
 npm install
 ```
 
-## Configuration
-Create a config.json file in the root directory of your project with the following content:
-
-```json
-{
-  "GITHUB_TOKEN": "your_github_token",
-  "REPO_OWNER": "your_repo_owner",
-  "REPO_NAME": "your_repo_name"
-}
-```
-
-Replace your_github_token, your_repo_owner, and your_repo_name with your actual GitHub token, repository owner, and repository name.
-
 ## Usage
 Run the following command to start the Kaixo CLI:
 
@@ -36,6 +23,7 @@ node index.js
 
 ## Options
 - **Search Code**: Search for code in the repository.
+- **Update Config**: Update the config.json data.
 - **Exit**: Exit the CLI.
 
 ## Example
