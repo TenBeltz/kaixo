@@ -42,7 +42,7 @@ function main() {
         console.log('Searching code...\n');
         searchCode(REPO_OWNER, REPO_NAME);
         break;
-      case 'Update config':
+      case 'Update Config':
         updateConfig()
           .then(updatedConfig => {
             console.log('Updated configuration:', updatedConfig);
