@@ -13,7 +13,7 @@ export function saveConfig(config) {
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
 }
 
-export function updateConfig() {
+export async function updateConfig() {
   const config = readConfig();
 
   const questions = [
@@ -37,15 +37,14 @@ export function updateConfig() {
     },
   ];
 
-  return inquirer.prompt(questions)
-    .then(answers => {
-      const updatedConfig = { ...config, ...answers };
-      saveConfig(updatedConfig);
-      console.log('Configuration updated successfully!\n');
-      return updatedConfig;
-    })
-    .catch(error => {
-      console.error('Error updating configuration:', error);
-      throw error;
-    });
+  try {
+    const answers = await inquirer.prompt(questions);
+    const updatedConfig = { ...config, ...answers };
+    saveConfig(updatedConfig);
+    console.log('Configuration updated successfully!\n');
+    return updatedConfig;
+  } catch (error) {
+    console.error('Error updating configuration:', error);
+    throw error;
+  }
 }
