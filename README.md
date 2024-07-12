@@ -23,7 +23,7 @@ node index.js
 
 ## Options
 - **Search Code**: Search for code in the repository.
-- **Update Config**: Update the config.json data.
+- **Update Config**: Update the config.js data.
 - **Exit**: Exit the CLI.
 
 ## Example
@@ -48,6 +48,9 @@ Contains the logic for searching code within the GitHub repository. It uses the 
 
 ### pullCode.js
 Handles the cloning of files and folders from the GitHub repository. It includes functions for cloning individual files and entire directories.
+
+### updateConfig.js
+Update the GitHub token, repository owner, and repository name used for accessing the code.
 
 ## Dependencies
 
