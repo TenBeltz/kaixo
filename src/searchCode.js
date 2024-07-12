@@ -1,14 +1,10 @@
-import fs from 'fs';
 import inquirer from 'inquirer';
 import gradient from 'gradient-string';
 import { Octokit } from '@octokit/rest';
 import { cloneFolder, cloneFile } from './pullCode.js';
+import config from './config.js';
 
-// Load configuration from config.json
-const configPath = './config.json';
-const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 const { GITHUB_TOKEN } = config;
-
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
 const purple = '#922ABF';

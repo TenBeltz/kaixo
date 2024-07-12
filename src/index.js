@@ -3,11 +3,11 @@
 import { Command } from 'commander';
 import inquirer from 'inquirer';
 import gradient from 'gradient-string';
-import { readConfig, updateConfig } from './updateConfig.js';
+import { updateConfig } from './updateConfig.js';
 import { searchCode } from './searchCode.js';
+import config from './config.js';
 
 function main() {
-  const config = readConfig();
   const { GITHUB_TOKEN, REPO_OWNER, REPO_NAME } = config;
 
   const purple = '#922ABF';
@@ -42,13 +42,10 @@ function main() {
           .catch(error => {
             console.error('Error updating configuration:', error);
           })
-          .finally(() => {
-            main();
-          });
         break;
       default:
         console.log('Exiting...');
-        process.exit();
+        return;
     }
   })
   .catch(error => {
