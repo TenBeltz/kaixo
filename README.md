@@ -63,7 +63,7 @@ Update the GitHub token, repository owner, and repository name used for accessin
 MIT License
 
 ## Author
-TenBeltz
+Angel Jimenez - TenBeltz
 
 ## Contact
 For any questions or support, please contact [TenBeltz.](https://github.com/TenBeltz)
