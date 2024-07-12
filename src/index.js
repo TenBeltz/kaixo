@@ -6,16 +6,6 @@ import gradient from 'gradient-string';
 import { readConfig, updateConfig } from './updateConfig.js';
 import { searchCode } from './searchCode.js';
 
-// Commander config
-const program = new Command();
-
-program
-  .name('Kaixo')
-  .description('Kaixo is a command-line tool by TenBeltz for managing code reuse. It allows developers to search and clone code from a private GitHub repository, serving as an internal code library.')
-  .version('1.0.0');
-
-program.parse(process.argv);
-
 function main() {
   const config = readConfig();
   const { GITHUB_TOKEN, REPO_OWNER, REPO_NAME } = config;
@@ -65,5 +55,14 @@ function main() {
     console.error('Error occurred:', error);
   });
 }
+
+// Commander config
+const program = new Command();
+
+program
+  .name('Kaixo')
+  .description('Kaixo is a command-line tool by TenBeltz for managing code reuse. It allows developers to search and clone code from a private GitHub repository, serving as an internal code library.')
+  .version('1.0.0')
+  .parse(process.argv);
 
 main();
