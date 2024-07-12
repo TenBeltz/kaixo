@@ -40,9 +40,6 @@ export async function updateConfig() {
     const configContent = `const config = ${JSON.stringify(config, null, 2)};\n\nexport default config;\n`;
 
     fs.writeFileSync(configPath, configContent);
-
-    console.log('Configuration updated and saved successfully!\n');
-    console.log('Updated configuration:', config);
     return config;
   } catch (error) {
     console.error('Error updating configuration:', error);

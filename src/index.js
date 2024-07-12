@@ -42,13 +42,10 @@ function main() {
           .catch(error => {
             console.error('Error updating configuration:', error);
           })
-          .finally(() => {
-            main();
-          });
         break;
       default:
         console.log('Exiting...');
-        process.exit();
+        return;
     }
   })
   .catch(error => {
