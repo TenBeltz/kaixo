@@ -1,21 +1,14 @@
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import inquirer from 'inquirer';
+import config from './config.js';
 
-// Load configuration from config.json
-const configPath = './config.json';
-
-export function readConfig() {
-  const config = fs.readFileSync(configPath, 'utf8');
-  return JSON.parse(config);
-}
-
-export function saveConfig(config) {
-  fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const configPath = `${__dirname}/config.js`;
 
 export async function updateConfig() {
-  const config = readConfig();
-
   const questions = [
     {
       type: 'input',
@@ -39,10 +32,18 @@ export async function updateConfig() {
 
   try {
     const answers = await inquirer.prompt(questions);
-    const updatedConfig = { ...config, ...answers };
-    saveConfig(updatedConfig);
-    console.log('Configuration updated successfully!\n');
-    return updatedConfig;
+
+    config.GITHUB_TOKEN = answers.GITHUB_TOKEN;
+    config.REPO_OWNER = answers.REPO_OWNER;
+    config.REPO_NAME = answers.REPO_NAME;
+
+    const configContent = `const config = ${JSON.stringify(config, null, 2)};\n\nexport default config;\n`;
+
+    fs.writeFileSync(configPath, configContent);
+
+    console.log('Configuration updated and saved successfully!\n');
+    console.log('Updated configuration:', config);
+    return config;
   } catch (error) {
     console.error('Error updating configuration:', error);
     throw error;

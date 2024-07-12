@@ -1,10 +1,9 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import { Octokit } from '@octokit/rest';
+import config from './config.js';
 
 // Load configuration from config.json
-const configPath = './config.json';
-const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 const { GITHUB_TOKEN } = config;
 
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
