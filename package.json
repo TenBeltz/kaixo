@@ -8,9 +8,10 @@
     "kaixo": "src/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
-  "author": "Angel Jimenez",
+  "keywords": ["kaixo", "code recyle", "tenbeltz"],
+  "author": "Angel Jimenez(Tenshi_) - TenBeltz",
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^20.1.1",
