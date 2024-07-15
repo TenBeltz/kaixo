@@ -1,7 +1,7 @@
 const config = {
-  "GITHUB_TOKEN": "",
-  "REPO_OWNER": "",
-  "REPO_NAME": ""
+  'GITHUB_TOKEN': '',
+  'REPO_OWNER': '',
+  'REPO_NAME': ''
 };
 
 export default config;

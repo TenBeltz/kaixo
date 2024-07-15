@@ -14,7 +14,7 @@ function main() {
   const pink = '#E2BBF2';
   const tenbeltzGradient = gradient(purple, pink);
 
-  const header = "TenBeltz - Code Recycle\n";
+  const header = 'TenBeltz - Code Recycle\n';
   console.log(tenbeltzGradient(header));
 
   inquirer.prompt({
@@ -28,8 +28,8 @@ function main() {
       'Exit'
     ]
   })
-  .then(answer => {
-    switch (answer.Options) {
+    .then(answer => {
+      switch (answer.Options) {
       case 'Search Code':
         console.log('Searching code...\n');
         searchCode(REPO_OWNER, REPO_NAME);
@@ -41,16 +41,16 @@ function main() {
           })
           .catch(error => {
             console.error('Error updating configuration:', error);
-          })
+          });
         break;
       default:
         console.log('Exiting...');
         return;
-    }
-  })
-  .catch(error => {
-    console.error('Error occurred:', error);
-  });
+      }
+    })
+    .catch(error => {
+      console.error('Error occurred:', error);
+    });
 }
 
 // Commander config
