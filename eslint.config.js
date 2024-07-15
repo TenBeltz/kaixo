@@ -3,6 +3,13 @@ import pluginJs from '@eslint/js';
 
 export default [
   {
+    files: ['**/*.js'],
+    ignores: [
+      'node_modules/',
+      '*.min.js',
+      '*.bundle.js',
+      'config.js',
+    ],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'module',
