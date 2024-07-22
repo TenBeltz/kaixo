@@ -1,6 +1,6 @@
 {
   "name": "kaixo",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Kaixo is a command-line application (CLI) developed by TenBeltz, designed to facilitate code reuse management by allowing developers to search and clone code from a private GitHub repository. This private repository serves as an internal code library for TenBeltz.",
   "main": "src/index.js",
   "type": "module",
